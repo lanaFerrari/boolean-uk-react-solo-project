@@ -68,3 +68,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+----------------------------------------------------------
+Instructions for project setup:
+
+With VS code open the folder where you keep your boolean projects.
+
+-Open a terminal
+- Run npx create-react-app boolean-uk-react-solo-project
+- Open boolean-uk-react-solo-project in a new VS code window
+
+And follow the instructions below:
+
+- Add the db folder (given to you in your sign off) to the root of your project
+
+In a terminal in your project folder:
+
+npm start
+
+In a new terminal in your project folder:
+
+json-server --watch db/db.json --routes db/routes.json --port 3030
+
+No routes.json, use:
+
+json-server --watch db/db.json --port 3030
