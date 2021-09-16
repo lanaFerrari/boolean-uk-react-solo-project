@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Tim",
+      "lastName": "Ferris"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "My review of a film",
+      "review": "Lorem ipusm...",
+      "filmId": "Use the ID from the public API for the film id",
+      "terms": true,
+      "rating": 3,
+      "userId": 1
+    }
+  ]
+}
