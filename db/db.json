@@ -1,51 +1,59 @@
- {
+{
   "users": [
     {
       "id": 1,
       "name": "Tim"
+    },
+    {
+      "name": "Lana",
+      "id": 2
     }
   ],
   "posts": [
     {
-      "id": 1,
-      "title": "Bla",
-      "review": "Lorem ipusm...",
-      "filmId": "Use the ID from the public API for the film id",
+      "title": "Kindred",
+      "review": "Great",
+      "filmId": 2,
       "terms": true,
-      "rating": 3,
-      "userId": 1
+      "rating": "2",
+      "userId": 2,
+      "user": {
+        "name": "Lana",
+        "id": 2
+      },
+      "id": 2
     }
   ],
-  "films":[
-{
-  "id": 1,
-  "genre": "Terror",
-  "name": "The Conjuring",
-  "image": "https://www.bollywoodhungama.com/wp-content/uploads/2021/06/EXCLUSIVE-The-Conjuring-The-Devil-Made-Me-Do-It-expected-to-release-in-India-in-CINEMAS-on-July-2-2.jpg"
-},
-{
-  "id": 2,
-  "genre": "Drama",
-  "name": "Kindred",
-  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvUZq7a3xAidzDOuiiWSzAJKYGLgg_4b8m2MAAfjjnh062bMKN"
-},
-{
-  "id": 3,
-  "genre": "Sci-fi",
-  "name": "Matrix",
-  "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS4jfQQt_0vCA4XSwGiWkffC32Tv2oajdWhaYHHVYylYGJ3v17Q"
-},
-{
-  "id": 4,
-  "genre": "Comedy",
-  "name": "Space Jam",
-  "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSz4dInhb_UFBJshGiTsCAyHwm1rmj9qw9Xbiv_eJ4wJpk_LvLr"
-},
-{
-  "id": 5,
-  "genre": "Hard Drugs",
-  "name": "Fear and Loathing in Las Vegas",
-  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXz7NyAmoAXezhHJkpQbmYkT5EjK6W_FsEWhdm8C2r5-Jr7Fsg"
-}
+  "films": [
+    {
+      "id": 1,
+      "genre": "Terror",
+      "name": "The Conjuring",
+      "image": "https://www.bollywoodhungama.com/wp-content/uploads/2021/06/EXCLUSIVE-The-Conjuring-The-Devil-Made-Me-Do-It-expected-to-release-in-India-in-CINEMAS-on-July-2-2.jpg"
+    },
+    {
+      "id": 2,
+      "genre": "Drama",
+      "name": "Kindred",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvUZq7a3xAidzDOuiiWSzAJKYGLgg_4b8m2MAAfjjnh062bMKN"
+    },
+    {
+      "id": 3,
+      "genre": "Sci-fi",
+      "name": "Matrix",
+      "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS4jfQQt_0vCA4XSwGiWkffC32Tv2oajdWhaYHHVYylYGJ3v17Q"
+    },
+    {
+      "id": 4,
+      "genre": "Comedy",
+      "name": "Space Jam",
+      "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSz4dInhb_UFBJshGiTsCAyHwm1rmj9qw9Xbiv_eJ4wJpk_LvLr"
+    },
+    {
+      "id": 5,
+      "genre": "Hard Drugs",
+      "name": "Fear and Loathing in Las Vegas",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXz7NyAmoAXezhHJkpQbmYkT5EjK6W_FsEWhdm8C2r5-Jr7Fsg"
+    }
   ]
 }
