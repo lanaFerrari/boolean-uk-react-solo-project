@@ -27,6 +27,7 @@ export default function Reviews(props) {
           <li key={index}>
             <h3>{title}</h3>
             <p>{review}</p>
+            <p>By: {user.name}</p>
             <ReactStars
               count={5}
               onChange={ratingChanged}
@@ -44,7 +45,7 @@ export default function Reviews(props) {
                 setPostToEdit(rev);
               }}
             >
-              {hideEdit ? "Edit" : "Cancel"}
+              Edit
             </button>
             <button
               onClick={() => {
@@ -52,7 +53,7 @@ export default function Reviews(props) {
                 setPostToDelete(rev);
               }}
             >
-              {hideDelete ? "Delete" : "Cancel"}
+              Delete
             </button>
           </li>
         );

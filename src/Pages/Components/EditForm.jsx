@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function EditForm(props) {
-  const { setReviews, reviews, postToEdit, setPostToEdit } = props;
+  const { setReviews, reviews, postToEdit, hideEdit, setHideEdit } = props;
 
   // console.log("Post to edit", postToEdit);
 
@@ -76,6 +76,7 @@ export default function EditForm(props) {
             });
 
             setReviews(updatedPosts);
+            setHideEdit(!hideEdit);
           });
       });
   };
@@ -127,6 +128,14 @@ export default function EditForm(props) {
         <div>
           <button type="submit">Send</button>
         </div>
+        <button
+          className="btn"
+          onClick={() => {
+            setHideEdit(!hideEdit);
+          }}
+        >
+          Cancel
+        </button>
       </form>
     </main>
   );

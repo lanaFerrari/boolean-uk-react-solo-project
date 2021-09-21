@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import React, { Component } from "react";
 
 export default function Form(props) {
-  const { filmToReview, user, setReviews, reviews } = props;
+  const { filmToReview, user, setReviews, reviews, setHideForm, hideForm } =
+    props;
 
   const { name, id } = filmToReview;
 
@@ -63,7 +64,7 @@ export default function Form(props) {
               user: newUser,
             };
 
-            setReviews([...reviews, postToAdd]);
+            setReviews([postToAdd, ...reviews]);
           });
       });
   };
@@ -73,7 +74,7 @@ export default function Form(props) {
       <div>
         <h2>{filmToReview.name}</h2>
       </div>
-      <label htmlFor="first-name-input">Rating(1-5)</label>
+      <label htmlFor="rating">Rating(1-5)</label>
       <input
         id="rating"
         name="ratingt"
@@ -116,6 +117,14 @@ export default function Form(props) {
             type="submit"
           >
             Send
+          </button>
+          <button
+            className="btn"
+            onClick={() => {
+              setHideForm(!hideForm);
+            }}
+          >
+            Cancel
           </button>
         </div>
       </div>

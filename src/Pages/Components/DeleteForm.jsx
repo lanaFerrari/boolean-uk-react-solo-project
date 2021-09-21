@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 
 export default function DeleteForm(props) {
-  const { postToDelete, setPostToDelete, setReviews, reviews } = props;
+  const {
+    postToDelete,
+    setPostToDelete,
+    setReviews,
+    reviews,
+    setHideDelete,
+    hideDelete,
+  } = props;
 
   const { id, title, rating, review, terms, userId, filmId, user } =
     postToDelete;
@@ -27,7 +34,14 @@ export default function DeleteForm(props) {
         <li>Rating: {rating}</li>
       </div>
       <button onClick={handleSubmit}>Delete</button>
-      <button>Cancel</button>
+      <button
+        className="btn"
+        onClick={() => {
+          setHideDelete(!hideDelete);
+        }}
+      >
+        Cancel
+      </button>
     </main>
   );
 }

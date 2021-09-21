@@ -1,11 +1,30 @@
+import { useEffect, useState } from "react";
+import Header from "./Header";
+
 export default function films(props) {
-  const { films, setFilmToReview, hideForm, setHideForm } = props;
+  const {
+    films,
+    filteredFilms,
+    setFilmToReview,
+    hideForm,
+    setHideForm,
+    searchInput,
+    setSearchInput,
+    user,
+    genre,
+    setFilms,
+    resetFilms,
+    setResetFilms,
+  } = props;
 
   return (
-    <div>
+    <>
       <h3>Films</h3>
+      <button ClassName="click-button" onClick={() => {}}>
+        Clean selection
+      </button>
       <ul className="responsive-grid">
-        {films.map((film, index) => {
+        {filteredFilms.map((film, index) => {
           const { id, genre, name, image } = film;
           return (
             <li key={index}>
@@ -18,13 +37,13 @@ export default function films(props) {
                     setHideForm(!hideForm);
                   }}
                 >
-                  {hideForm ? "Select" : "Cancel"}
+                  {hideForm ? "Select" : "Select"}
                 </button>
               </div>
             </li>
           );
         })}
       </ul>
-    </div>
+    </>
   );
 }

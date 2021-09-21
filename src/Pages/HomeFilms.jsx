@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
-import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import Films from "./Components/Films";
 import Form from "./Components/Form";
 import Reviews from "./Components/Reviews";
 import EditForm from "./Components/EditForm";
 import DeleteForm from "./Components/DeleteForm";
+import Header from "./Components/Header";
 
 export default function HomeFilms(props) {
   const {
     reviews,
     user,
     films,
+    setFilms,
+    filmsGenres,
     setFilmToReview,
     filmToReview,
     hideForm,
@@ -21,29 +23,44 @@ export default function HomeFilms(props) {
     setHideEdit,
     hideDelete,
     setHideDelete,
+    genre,
+    setGenre,
+    searchInput,
+    setSearchInput,
+    rating,
+    setRating,
+    postToEdit,
+    setPostToEdit,
+    postToDelete,
+    setPostToDelete,
+    handleCheckbox,
+    filteredFilms,
+    search,
+    setSearch,
+    handleInput,
+    handleSubmit,
+    resetFilms,
+    setResetFilms,
+    problem,
+    setProblem,
+    array,
+    setArray,
   } = props;
-
-  const [searchInput, setSearchInput] = useState("");
-  const [rating, setRating] = useState(null);
-  const [postToEdit, setPostToEdit] = useState({});
-  const [postToDelete, setPostToDelete] = useState({});
 
   return (
     <>
-      <Header
-        searchInput={searchInput}
-        setSearchInput={setSearchInput}
-        user={user}
-      />
       <main>
-        <Sidebar films={films} />
+        <Sidebar films={filmsGenres} onChange={handleCheckbox} />
+        <Header
+          searchInput={searchInput}
+          setSearchInput={setSearchInput}
+          user={user}
+          search={search}
+          setSearch={setSearch}
+          handleInput={handleInput}
+          handleSubmit={handleSubmit}
+        />
         <div className="content two-c-grid">
-          <Films
-            films={films}
-            setFilmToReview={setFilmToReview}
-            hideForm={hideForm}
-            setHideForm={setHideForm}
-          />
           <div>
             {!hideForm && (
               <Form
@@ -51,6 +68,8 @@ export default function HomeFilms(props) {
                 user={user}
                 setReviews={setReviews}
                 reviews={reviews}
+                setHideForm={setHideForm}
+                hideForm={hideForm}
               />
             )}
             {!hideEdit && (
@@ -58,7 +77,8 @@ export default function HomeFilms(props) {
                 setReviews={setReviews}
                 reviews={reviews}
                 postToEdit={postToEdit}
-                setPostToEdit={setPostToEdit}
+                setHideEdit={setHideEdit}
+                hideEdit={hideEdit}
               />
             )}
             {!hideDelete && (
@@ -67,6 +87,8 @@ export default function HomeFilms(props) {
                 setPostToDelete={setPostToDelete}
                 setReviews={setReviews}
                 reviews={reviews}
+                hideDelete={hideDelete}
+                setHideDelete={setHideDelete}
               />
             )}
             <Reviews
@@ -81,6 +103,22 @@ export default function HomeFilms(props) {
               setPostToEdit={setPostToEdit}
               postToDelete={postToDelete}
               setPostToDelete={setPostToDelete}
+            />
+          </div>
+          <div>
+            <Films
+              films={films}
+              filteredFilms={filteredFilms}
+              setFilmToReview={setFilmToReview}
+              hideForm={hideForm}
+              setHideForm={setHideForm}
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
+              user={user}
+              genre={genre}
+              resetFilms={resetFilms}
+              setResetFilms={setResetFilms}
+              setFilms={setFilms}
             />
           </div>
         </div>
